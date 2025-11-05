@@ -3,8 +3,8 @@
   Student Name: Ghaith Fouqhaa
   Student Id: 12217983
 */
+/* ========== Root(Color) ========== */
 
-/* ========== VARIABLES ========== */
 :root {
     --bg: #faf7f2;
     --text: hwb(0 12% 88%);
@@ -15,10 +15,9 @@
     --border: #e9e3db;
     --radius: 14px;
     --shadow: rgba(0, 0, 0, 0.08);
-    --transition: 0.25s ease;
 }
-
 /* ========== BASE STYLES ========== */
+
 body {
     margin: 0;
     font-family: "Rubik", sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -27,7 +26,8 @@ body {
     line-height: 1.6;
 }
 
-h1, h3 {
+h1,
+h3 {
     color: var(--text);
     margin: 0 0 10px;
 }
@@ -35,14 +35,18 @@ h1, h3 {
 a {
     text-decoration: none;
     color: var(--brand);
-    transition: color var(--transition);
 }
 
 a:hover {
     color: var(--brand-2);
 }
 
+img {
+    display: block;
+    width: 100%;
+}
 /* ========== HEADER ========== */
+
 .site-header {
     position: fixed;
     top: 0;
@@ -74,27 +78,26 @@ a:hover {
 }
 
 .nav-links li a {
-    color: var(--text);
-    font-weight: 500;
+    color: var(--brand);
+
+    font-weight: bold;
 }
 
 .nav-links li a:hover {
     color: var(--brand);
 }
-
 /* ========== HERO SECTION ========== */
+
 .hero {
     position: relative;
-    height: 90vh; 
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)), url("../images/bg.jpg") center/cover no-repeat;
+    height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)), url("../image/bg.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
 }
-
-
 
 .hero .overlay {
     position: relative;
@@ -130,36 +133,34 @@ a:hover {
 .btn {
     display: inline-block;
     background: var(--brand);
-    color: #fff;
+    color: var(--card);
     text-decoration: none;
     padding: 12px 28px;
     border-radius: 30px;
     font-weight: 600;
-transition: all 0.3s ease; 
-
-
 }
 
 .btn:hover {
     background: var(--brand-2);
-    transform: scale(1.05);    
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
-
- 
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: var(--card);
 }
-.welcome{
-    color: white;
+
+.welcome {
+    color: var(--card);
     font-size: 30px;
 }
 /* ========== ABOUT SECTION ========== */
+
 .about-section {
     padding: 80px 20px;
     background: var(--bg);
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+.about-flex {
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     max-width: 1100px;
     margin: auto;
@@ -171,7 +172,7 @@ transition: all 0.3s ease;
     border-radius: var(--radius);
     box-shadow: 0 4px 10px var(--shadow);
     border: 1px solid var(--border);
-    transition: transform var(--transition);
+    flex: 1 1 320px;
 }
 
 .card:hover {
@@ -179,11 +180,15 @@ transition: all 0.3s ease;
 }
 
 .card h3 {
-    color: var(--brand);
+    color: var(--text);
     margin-bottom: 12px;
 }
 
 .card p {
+    color: var(--muted);
+}
+
+.card p.contact {
     color: var(--text);
 }
 
@@ -200,8 +205,8 @@ transition: all 0.3s ease;
     font-size: 0.8rem;
     margin-right: 6px;
 }
-
 /* ========== MENU SECTION ========== */
+
 .menu-section {
     padding: 80px 20px;
     background: #fefcf9;
@@ -219,24 +224,23 @@ transition: all 0.3s ease;
     margin-bottom: 40px;
 }
 
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.menu-flex {
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     text-align: left;
 }
 
 .menu-card {
     background: var(--card);
-    border: 1px solid var(--border);
     box-shadow: 0 4px 8px var(--shadow);
     border-radius: var(--radius);
     padding: 25px;
+    flex: 1 1 280px;
 }
 
 .menu-card h3 {
-    color: var(--brand);
-    border-bottom: 2px solid var(--border);
+    color: var(--text);
     padding-bottom: 8px;
     margin-bottom: 15px;
 }
@@ -251,6 +255,11 @@ transition: all 0.3s ease;
     margin-bottom: 14px;
 }
 
+.menu-card li:not(:last-of-type) {
+    border-bottom: 1px dashed var(--border);
+    padding-block-end: 14px;
+}
+
 .menu-card strong {
     color: var(--text);
 }
@@ -258,10 +267,14 @@ transition: all 0.3s ease;
 .menu-card small {
     color: var(--muted);
 }
+#menu h2{
+    color: var(--text);
+    text-align: left !important;
+}
 
 .price {
     float: right;
-    color: var(--brand-2);
+    color: var(--brand);
     font-weight: 600;
 }
 
@@ -271,19 +284,23 @@ transition: all 0.3s ease;
     font-size: 0.9rem;
     margin-top: 25px;
 }
-
 /* ========== HOURS SECTION ========== */
+
 .hours-section {
     padding: 80px 20px;
     background: var(--bg);
 }
 
-.hours-grid {
+.hours-flex {
     max-width: 1000px;
     margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
+}
+
+.hours-flex>* {
+    flex: 1 1 320px;
 }
 
 .hours-list {
@@ -295,38 +312,103 @@ transition: all 0.3s ease;
     display: flex;
     justify-content: space-between;
     padding: 6px 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px dashed var(--border);
+    color: var(--muted)
 }
-
 /* ========== FIND US SECTION ========== */
+
 .find-section {
     padding: 80px 20px;
     background: #fefcf9;
 }
 
-.find-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+.find-flex {
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
     max-width: 1100px;
     margin: auto;
 }
 
-.map-box img {
-    width: 100%;
-    border-radius: var(--radius);
+.find-flex>* {
+    flex: 1 1 320px;
 }
 
+.map-box img {
+    border-radius: var(--radius);
+}
 /* ========== FOOTER ========== */
+
 .site-footer {
-    background: var(--brand);
-    color: #fff;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
     text-align: center;
     padding: 30px 15px;
     font-size: 0.9rem;
 }
 
 .site-footer a {
-    color: #d9f8e5;
+    color: var(--text);
     font-weight: 500;
+}
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 16px 20px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+    }
+
+    .about-flex,
+    .menu-flex,
+    .hours-flex,
+    .find-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-card,
+    .card,
+    .hours-flex>*,
+    .find-flex>* {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .menu-container h2 {
+        font-size: 2rem;
+    }
+
+    .about-flex,
+    .menu-flex,
+    .hours-flex,
+    .find-flex {
+        justify-content: space-between;
+    }
 }
