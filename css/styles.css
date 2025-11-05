@@ -1,0 +1,332 @@
+/*
+  styles.css
+  Student Name: Ghaith Fouqhaa
+  Student Id: 12217983
+*/
+
+/* ========== VARIABLES ========== */
+:root {
+    --bg: #faf7f2;
+    --text: hwb(0 12% 88%);
+    --muted: #6b6b6b;
+    --brand: #216869;
+    --brand-2: #49a078;
+    --card: #ffffff;
+    --border: #e9e3db;
+    --radius: 14px;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --transition: 0.25s ease;
+}
+
+/* ========== BASE STYLES ========== */
+body {
+    margin: 0;
+    font-family: "Rubik", sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+}
+
+h1, h3 {
+    color: var(--text);
+    margin: 0 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--brand);
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--brand-2);
+}
+
+/* ========== HEADER ========== */
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--card);
+    box-shadow: 0 2px 6px var(--shadow);
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 40px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--brand);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: var(--brand);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    position: relative;
+    height: 90vh; 
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)), url("../images/bg.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+
+.hero .overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.hero .tagline {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--brand-2);
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    font-weight: 700;
+}
+
+.hero .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    color: #f2f2f2;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--brand);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+transition: all 0.3s ease; 
+
+
+}
+
+.btn:hover {
+    background: var(--brand-2);
+    transform: scale(1.05);    
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+
+ 
+}
+.welcome{
+    color: white;
+    font-size: 30px;
+}
+/* ========== ABOUT SECTION ========== */
+.about-section {
+    padding: 80px 20px;
+    background: var(--bg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    color: var(--brand);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--text);
+}
+
+.tags {
+    margin-top: 15px;
+}
+
+.tags span {
+    display: inline-block;
+    background: var(--bg);
+    color: #000000;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 6px;
+}
+
+/* ========== MENU SECTION ========== */
+.menu-section {
+    padding: 80px 20px;
+    background: #fefcf9;
+}
+
+.menu-container {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.menu-container h2 {
+    color: var(--brand);
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.menu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 8px var(--shadow);
+    border-radius: var(--radius);
+    padding: 25px;
+}
+
+.menu-card h3 {
+    color: var(--brand);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.menu-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-card li {
+    margin-bottom: 14px;
+}
+
+.menu-card strong {
+    color: var(--text);
+}
+
+.menu-card small {
+    color: var(--muted);
+}
+
+.price {
+    float: right;
+    color: var(--brand-2);
+    font-weight: 600;
+}
+
+.menu-note {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 25px;
+}
+
+/* ========== HOURS SECTION ========== */
+.hours-section {
+    padding: 80px 20px;
+    background: var(--bg);
+}
+
+.hours-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.hours-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ========== FIND US SECTION ========== */
+.find-section {
+    padding: 80px 20px;
+    background: #fefcf9;
+}
+
+.find-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.map-box img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+    background: var(--brand);
+    color: #fff;
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #d9f8e5;
+    font-weight: 500;
+}
