@@ -352,6 +352,9 @@ img {
     color: var(--text);
     font-weight: 500;
 }
+.site-footer span{
+  color:var(--brand);
+}
 /* ========== RESPONSIVE DESIGN ========== */
 
 @media (max-width: 768px) {
